@@ -1,0 +1,37 @@
+# Haskell / Stack / Cabal
+.stack-work/
+dist/
+dist-newstyle/
+*.hi
+*.o
+*.dyn_hi
+*.dyn_o
+*.prof
+*.aux
+*.hp
+*.eventlog
+
+# Generated parser output
+backend/output/
+backend/saved/
+backend/examples/output/
+backend/examples/diff_output/
+
+# Node / Vite
+frontend/node_modules/
+frontend/dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Local configuration and editor files
+.DS_Store
+.env
+.env.*
+!.env.example
+.idea/
+.vscode/
+*.code-workspace
+*~
+*.swp

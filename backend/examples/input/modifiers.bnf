@@ -1,0 +1,10 @@
+<program>    ::= <statement>*
+<statement>  ::= "console.log(" <expression> ");" <comment>? [newline]
+<expression> ::= <term> "+" <expression> | <term>
+<term>       ::= <factor> "*" <term> | <factor>
+<factor>     ::= tok <number> | tok <variable> | tok "(" <expression> tok ")"
+<number>     ::= [int]
+<variable>   ::= [alpha]
+<pair(a, b)> ::= [a] "," [b]
+<numberPair> ::= <pair([int], [int])>
+<comment>    ::= " // " [alpha]

@@ -1,0 +1,66 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.38.1.
+--
+-- see: https://github.com/sol/hpack
+
+name:           bnf-parser-generator
+version:        0.1.0.0
+description:    Parse, validate, and compile BNF grammars into Haskell parser combinators.
+license:        AllRightsReserved
+build-type:     Simple
+
+library
+  exposed-modules:
+      BNFGenerator
+      Instances
+      Parser
+  other-modules:
+      Paths_bnf_parser_generator
+  hs-source-dirs:
+      src
+  default-extensions:
+      InstanceSigs
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-prepositive-qualified-module -Wno-missing-deriving-strategies -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-missing-kind-signatures -Wno-missing-poly-kind-signatures -Wno-missing-role-annotations -Wno-missing-safe-haskell-mode -Wno-missed-specialisations -Wno-operator-whitespace -Wno-safe -Wno-term-variable-capture -Wno-unsafe -Wno-unused-packages -Werror -Wwarn=missing-export-lists -Wwarn=name-shadowing -Wwarn=unused-imports -Wwarn=unused-local-binds -Wwarn=unused-matches -Wwarn=unused-pattern-binds -Wwarn=unused-top-binds -Wwarn=unused-record-wildcards -Wwarn=type-defaults
+  build-depends:
+      base >=4.7 && <5
+    , time
+  default-language: Haskell2010
+
+executable bnf-parser-server
+  main-is: Main.hs
+  hs-source-dirs:
+      app
+  default-extensions:
+      InstanceSigs
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-prepositive-qualified-module -Wno-missing-deriving-strategies -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-missing-kind-signatures -Wno-missing-poly-kind-signatures -Wno-missing-role-annotations -Wno-missing-safe-haskell-mode -Wno-missed-specialisations -Wno-operator-whitespace -Wno-safe -Wno-term-variable-capture -Wno-unsafe -Wno-unused-packages -Werror -Wwarn=missing-export-lists -Wwarn=name-shadowing -Wwarn=unused-imports -Wwarn=unused-local-binds -Wwarn=unused-matches -Wwarn=unused-pattern-binds -Wwarn=unused-top-binds -Wwarn=unused-record-wildcards -Wwarn=type-defaults
+  build-depends:
+      aeson
+    , base >=4.7 && <5
+    , bnf-parser-generator
+    , directory
+    , filepath
+    , ghc
+    , ghc-paths
+    , scotty
+    , text
+    , time
+  default-language: Haskell2010
+
+test-suite regression
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_bnf_parser_generator
+  hs-source-dirs:
+      test
+  default-extensions:
+      InstanceSigs
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-prepositive-qualified-module -Wno-missing-deriving-strategies -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-missing-kind-signatures -Wno-missing-poly-kind-signatures -Wno-missing-role-annotations -Wno-missing-safe-haskell-mode -Wno-missed-specialisations -Wno-operator-whitespace -Wno-safe -Wno-term-variable-capture -Wno-unsafe -Wno-unused-packages -Werror -Wwarn=missing-export-lists -Wwarn=name-shadowing -Wwarn=unused-imports -Wwarn=unused-local-binds -Wwarn=unused-matches -Wwarn=unused-pattern-binds -Wwarn=unused-top-binds -Wwarn=unused-record-wildcards -Wwarn=type-defaults
+  build-depends:
+      base >=4.7 && <5
+    , bnf-parser-generator
+    , directory
+    , doctest
+    , filepath
+  default-language: Haskell2010
